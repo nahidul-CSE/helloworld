@@ -25,31 +25,38 @@ class HomeScreen extends StatelessWidget {
         ),),
         backgroundColor: Colors.black,
       ),
+      body: Column(
+        //mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.max,
+        children: [
+          Text('Column'),
+          Text('Column'),
+          Text('Column'),
+          Text('Column'),
+          Text('Column'),
+          Text('Column'),
+          Text('Column'),
+          Text('Column'),
+          Row(
+            children: [
+              Text('Row'),
+              Text('Row'),
+              Text('Row'),
+              Text('Row'),
+              Text('Row'),
+              Text('Row'),
+              Text('Row'),
+              Text('Row'),
+            ],
+          ),
+        ],
 
-      /*
-      body: Center(child: Text('Hello world Nahid Hello world Nahid,Hello world Nahid,Hello world Nahid,Hello world Nahid,',
-        style: TextStyle(
-          fontSize: 20,
-          color: Colors.lightGreenAccent,
-          backgroundColor: Color(0xffd43737),
-          letterSpacing: 4,
-        ),
-        textAlign: TextAlign.center,
-        maxLines: 2,
-        overflow: TextOverflow.clip,
+      ),
 
-        ),
 
-      ),*/
-      /*body: Image.network('https://thumbs.dreamstime.com/b/environment-earth-day-hands-trees-growing-seedlings-bokeh-green-background-female-hand-holding-tree-nature-field-gra-130247647.jpg',
-      ),*/
-      body: Center(
-          child: Image.asset(
-        'images/cse.png',
-        height: 300,
-        width: 300,
-        fit: BoxFit.contain,
-      )),
+
+
+
     );
     throw UnimplementedError();
   }
