@@ -25,34 +25,44 @@ class HomeScreen extends StatelessWidget {
         ),),
         backgroundColor: Colors.black,
       ),
-      body: Column(
+      body: Row(
         //mainAxisAlignment: MainAxisAlignment.center,
         mainAxisSize: MainAxisSize.max,
+        crossAxisAlignment: CrossAxisAlignment.end,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text('Column'),
           Text('Column'),
           Text('Column'),
           Text('Column'),
           Text('Column'),
-          Text('Column'),
-          Text('Column'),
-          Text('Column'),
-          Row(
+
+          Column(
             children: [
               Text('Row'),
               Text('Row'),
               Text('Row'),
               Text('Row'),
               Text('Row'),
-              Text('Row'),
-              Text('Row'),
-              Text('Row'),
+              ElevatedButton(onPressed: (){
+                showDialog(context: context, builder: (context){
+                  return AlertDialog(
+                    title: Text('Hi Nahid from Alert'),
+                    content: Text('Study Hard'),
+                    actions: [
+                      ElevatedButton(onPressed: (){
+
+                      }, child: Text('cancel')),
+                    ],
+                  );
+                });
+              }, child: Text('Click')),
+
             ],
           ),
         ],
 
       ),
-
 
 
 
