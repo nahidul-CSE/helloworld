@@ -54,12 +54,25 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             TextButton(onPressed: (){
-              showDialog(context: context, builder: (builder)
-              )
+              showDialog(context: context, builder: (context){
+               return AlertDialog(
+                 title: Text('Alert!!',),
+               );
+              }
+              );
             }, child: Text('Text Button',),),
+            IconButton(onPressed: (){}, icon: Icon(Icons.add),),
           ],
         ),
       ),
+      floatingActionButton: FloatingActionButton(onPressed: (){
+      },
+        
+        child: Icon(Icons.add,),
+        backgroundColor: Colors.blue,
+        
+      ),
+
     );
     throw UnimplementedError();
   }
