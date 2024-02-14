@@ -54,7 +54,8 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             TextButton(onPressed: (){
-              Dialo
+              showDialog(context: context, builder: (builder)
+              )
             }, child: Text('Text Button',),),
           ],
         ),
