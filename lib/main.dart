@@ -17,99 +17,48 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueGrey,
       appBar: AppBar(
-        leading: Icon(Icons.home, color: Colors.white54,),
-        title: Text('First App', style: TextStyle(
-          color: Colors.white70,
-        ),),
-        backgroundColor: Colors.black,
+        title: Text('Home'),
+        backgroundColor: Colors.blue,
       ),
-      body: Row(
-        //mainAxisAlignment: MainAxisAlignment.center,
-        mainAxisSize: MainAxisSize.max,
-        //crossAxisAlignment: CrossAxisAlignment.end,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text('Column'),
-          Text('Column'),
-          Text('Column'),
-          Text('Column'),
-          Text('Column'),
-
-          Column(
-            children: [
-              Text('Row'),
-              Text('Row'),
-              Text('Row'),
-              Text('Row'),
-              Text('Row'),
-              ElevatedButton(onPressed: (){
-                showDialog(context: context, builder: (context){
-                  return AlertDialog(
-                    title: Text('Hi Nahid from Alert'),
-                    content: Text('Study Hard'),
-                    actions: [
-                      ElevatedButton(onPressed: (){
-
-                      }, child: Text('cancel')),
-                    ],
-                  );
-                });
-              }, child: Text('Click')),
-      /*showModalBottomSheet(context: context, builder: (context){
-        return Column(
+      backgroundColor: Colors.grey,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Text from bottom Sheet')
+            ElevatedButton(
+              onPressed: (){
+                print('You tap me');
+              },
+              onLongPress: (){
+                print('Why long Pressed?');
+              },
+              child: Text('Click'),
+              style: ElevatedButton.styleFrom( //new style add krlam
+                backgroundColor: Colors.red,
+                //foregroundColor: Colors.lightBlueAccent,
+                minimumSize: Size(200, 50),
+                elevation: 7, //shadow dekhabe click krle
+                shadowColor: Colors.blueGrey,
+                //padding: EdgeInsets.symmetric(horizontal: 80, vertical: 20,),
+                padding: EdgeInsets.only(top: 30, bottom: 20,),
+
+                textStyle: TextStyle(
+                  color: Colors.black45,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+              ),
+            ),
+            TextButton(onPressed: (){
+              Dialo
+            }, child: Text('Text Button',),),
           ],
         ),
-      });*/
-              ElevatedButton(onPressed: (){
-                showModalBottomSheet(
-                  isDismissible: false,
-                    backgroundColor: Colors.lightBlue,
-                    context: context, builder: (context){
-                  return Column(
-                    children: [
-                      Text('Text from Modal Sheet11111111111111111111111',),
-                      Text('Text from Modal Sheet 2'),
-                      RichText(text: TextSpan(
-                        text: 'Please Accept the ',
-                        style: TextStyle(
-                          color: Colors.red,
-                        ),
-                        children: [
-                          TextSpan(
-                            text: 'Terms',
-                            style: TextStyle(
-                              color: Colors.white70,
-                              fontSize: 20,
-                            ),
-                          ),
-                          TextSpan(
-                            text: '& Conditions',
-                            style: TextStyle(
-                              color: Colors.white54,
-                              fontSize: 25,
-                            ),
-                          ),
-                        ],
-
-                      ),),
-                    ],
-                  );
-                });
-              }, child: Text('Tap')),
-
-            ],
-          ),
-        ],
-
       ),
-
-
-
-
     );
     throw UnimplementedError();
   }
