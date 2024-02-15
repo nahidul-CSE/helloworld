@@ -62,6 +62,44 @@ class HomeScreen extends StatelessWidget {
               );
             }, child: Text('Text Button',),),
             IconButton(onPressed: (){}, icon: Icon(Icons.add),),
+            TextField(
+              //controller: ,
+              onTap: (){
+                showDialog(context: context, builder: (context){
+                  return AlertDialog(
+                    title: Text(
+                      'You are typing', style: TextStyle(color: Colors.white,),
+                    ),
+                    backgroundColor: Colors.blue,
+                  );
+
+                },
+                );
+              },
+              onChanged: (String input){
+                print(input);
+              },
+              keyboardType: TextInputType.text,
+              textInputAction: TextInputAction.search,
+              decoration: InputDecoration(
+                enabled: true,
+                hintText: 'Enter Data',
+                label: Text('Type'),
+                border: OutlineInputBorder(
+
+                  borderSide: BorderSide(
+                    color: Colors.red,
+                    style: BorderStyle.solid,
+                  ),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.red,
+                    style: BorderStyle.solid,
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
@@ -70,6 +108,7 @@ class HomeScreen extends StatelessWidget {
         
         child: Icon(Icons.add,),
         backgroundColor: Colors.blue,
+        
         
       ),
 
