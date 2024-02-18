@@ -61,6 +61,23 @@ class HomeScreen extends StatelessWidget {
               }
               );
             }, child: Text('Text Button',),),
+            GestureDetector(
+              onTap: (){
+                print('tapped gesture');
+              },
+              child: Icon(Icons.circle),
+
+            ),
+            InkWell(
+              onTap: (){
+                print('tapped inkwell');
+              },
+              child: Text('tap............'),
+              radius: 8,
+              splashColor: Colors.red,
+              highlightColor: Colors.blue,
+
+            ),
             IconButton(onPressed: (){}, icon: Icon(Icons.add),),
             TextField(
               //controller: ,
@@ -76,12 +93,14 @@ class HomeScreen extends StatelessWidget {
                 },
                 );
               },
+              
               onChanged: (String input){
                 print(input);
               },
               keyboardType: TextInputType.text,
               textInputAction: TextInputAction.search,
               decoration: InputDecoration(
+                prefixIcon: Icon(Icons.add, color: Colors.red, size: 25,),
                 enabled: true,
                 hintText: 'Enter Data',
                 label: Text('Type'),
@@ -100,6 +119,33 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
             ),
+            Container(
+              margin: EdgeInsets.only(left: 10,),
+              padding: EdgeInsets.all(20),
+              child: Text('Palestine',style: TextStyle(color: Colors.white, fontSize: 25),),
+              alignment: Alignment.center,
+              height: 100,
+              width: 300,
+              decoration: BoxDecoration(
+                color: Colors.green,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(80),
+                ),
+                border: Border.all(
+                  color: Colors.red,
+                  width: 10,
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.green,
+                    blurRadius: 15,
+                    offset: Offset(4, 5),
+                  ),
+                ],
+
+              ),
+            ),
+
           ],
         ),
       ),
